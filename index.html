@@ -271,7 +271,7 @@ a:hover{color:#141414}
         <span style="display:flex;align-items:center;gap:12px;font-size:16px;line-height:24px;color:rgba(255,255,255,.9)">Scroll to explore <span style="width:40px;height:1px;background:rgba(255,255,255,.5)"></span><span aria-hidden="true">→</span></span>
       </div>
       <sc-for list="{{ props }}" as="c" hint-placeholder-count="7">
-        <a href="{{ c.href }}" data-card="{{ c.idx }}" aria-label="{{ c.name }}" onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" onFocus="{{ c.enter }}" onBlur="{{ c.leave }}" style="{{ c.wrap }}">
+        <a data-card="{{ c.idx }}" aria-label="{{ c.name }}" onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" onFocus="{{ c.enter }}" onBlur="{{ c.leave }}" style="{{ c.wrap }}">
           <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:16px;letter-spacing:.16em;text-transform:uppercase;color:#E6D3A3;font-weight:600"><span>{{ c.loc }}</span><span style="color:#E6D3A3">{{ c.num }}</span></div>
           <div style="{{ c.inner }}">
             <div style="position:absolute;inset:0 -10%;transform:translate3d(calc(var(--d,0) * -9%),0,0)"><image-slot id="{{ c.slot }}" src="{{ c.src }}" shape="rect" placeholder="{{ c.ph }}"></image-slot></div>
@@ -702,7 +702,7 @@ class Component extends DCLogic {
       const dim = hov !== null && !on;
       const x = i === 0 ? c.x : 40 + (c.x - 40) * gf;
       return {
-        name: c.name, loc: c.loc, num: String(i + 1).padStart(2, '0'), href: 'properti/' + c.slug + '.html', slot: 'e-prop-' + (i + 1), src: [((window.__resources||{})['r-new-resort-property-01-island-destination']||'assets/web/new-resort-property-01-island-destination.jpg'),((window.__resources||{})['r-villa-04-hillside-estate']||'assets/web/villa-04-hillside-estate.jpg'),((window.__resources||{})['r-new-resort-property-02-hillside-retreat']||'assets/web/new-resort-property-02-hillside-retreat.jpg'),((window.__resources||{})['r-hotel-02-urban-landmark']||'assets/web/hotel-02-urban-landmark.jpg'),((window.__resources||{})['r-villa-02-coastal-retreat']||'assets/web/villa-02-coastal-retreat.jpg'),((window.__resources||{})['r-hotel-03-mountain-wellness-retreat']||'assets/web/hotel-03-mountain-wellness-retreat.jpg'),((window.__resources||{})['r-property-community-01-landscaped-neighborhood']||'assets/web/property-community-01-landscaped-neighborhood.jpg')][i], ph: 'Property photo',
+        name: c.name, loc: c.loc, num: String(i + 1).padStart(2, '0'), slot: 'e-prop-' + (i + 1), src: [((window.__resources||{})['r-new-resort-property-01-island-destination']||'assets/web/new-resort-property-01-island-destination.jpg'),((window.__resources||{})['r-villa-04-hillside-estate']||'assets/web/villa-04-hillside-estate.jpg'),((window.__resources||{})['r-new-resort-property-02-hillside-retreat']||'assets/web/new-resort-property-02-hillside-retreat.jpg'),((window.__resources||{})['r-hotel-02-urban-landmark']||'assets/web/hotel-02-urban-landmark.jpg'),((window.__resources||{})['r-villa-02-coastal-retreat']||'assets/web/villa-02-coastal-retreat.jpg'),((window.__resources||{})['r-hotel-03-mountain-wellness-retreat']||'assets/web/hotel-03-mountain-wellness-retreat.jpg'),((window.__resources||{})['r-property-community-01-landscaped-neighborhood']||'assets/web/property-community-01-landscaped-neighborhood.jpg')][i], ph: 'Property photo',
         idx: i,
         enter: () => this.setState({ hov: i }),
         leave: () => this.setState(s => (s.hov === i ? { hov: null } : null)),

@@ -1,1 +1,1 @@
-- This chat is for enhancing `Sanurhasta Landing v6 Estate.dc.html`. Edit v6 unless told otherwise.
+- This chat is for enhancing `index.html` (the v6 Estate landing page). Edit it unless told otherwise.
