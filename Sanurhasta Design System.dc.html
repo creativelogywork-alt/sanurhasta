@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF;color:#141414;font-family:'Hanken Grotesk',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+*{box-sizing:border-box}
+a{color:#5E4A1E;text-decoration:none}
+a:hover{color:#141414}
+:focus-visible{outline:2px solid #5E4A1E;outline-offset:4px}
+</style>
+</helmet>
+<div style="overflow-x:clip">
+
+<header id="cover" data-screen-label="00 Cover" style="background:#F8F5EF;padding:round(clamp(64px,6.25vw,96px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2)) round(clamp(96px,10vw,160px),4px)">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+    <img src="assets/logo-color.svg" alt="Sanurhasta" style="height:32px;width:auto;display:block">
+    <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">Design System · v1.0 · October 2026</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:32px;margin-top:round(clamp(96px,10vw,160px),4px);max-width:1152px">
+    <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>PT Sanurhasta Mitra Tbk</div>
+    <h1 style="margin:0;font-weight:400;font-size:round(clamp(40px,5vw,80px),4px);line-height:calc(1em + 4px);letter-spacing:-.035em">Sanurhasta <span style="color:#8A6A2A;font-weight:500">design system.</span></h1>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">The rules behind the Sanurhasta corporate site: logo, colour, type, spacing, grid, shape, elevation and voice. Every size and space is a multiple of 4, and every text pairing is checked against WCAG 2.2 Level AAA.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:round(clamp(64px,6.25vw,96px),4px)">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="aspect-ratio:16/9;border-radius:24px;overflow:hidden;background-color:#FFFFFF;background-image:linear-gradient(rgba(20,20,20,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.06) 1px,transparent 1px);background-size:8px 8px;display:flex;align-items:center;justify-content:center">
+        <div style="width:64px;height:64px;background-color:#5E4A1E;background-image:linear-gradient(rgba(255,255,255,.24) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.24) 1px,transparent 1px);background-size:8px 8px;border-radius:8px"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Build on 4</h3><p style="margin:0;font-size:16px;line-height:24px;color:#3A3A3A">Font sizes, line heights, spacing, radii, icon boxes and shadow offsets all step in 4px increments.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="aspect-ratio:16/9;border-radius:24px;background:#FFFFFF;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="position:absolute;left:50%;top:16px;bottom:16px;width:1px;background:rgba(138,106,42,.4)"></div>
+        <div style="position:absolute;top:50%;left:16px;right:16px;height:1px;background:rgba(138,106,42,.4)"></div>
+        <div style="width:128px;height:64px;border:1px dashed #8A6A2A;border-radius:4px;display:flex;align-items:center;justify-content:center;background:#F8F5EF;position:relative"><img src="assets/s-mark.svg" alt="" style="height:40px;width:auto"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Keep it symmetrical</h3><p style="margin:0;font-size:16px;line-height:24px;color:#3A3A3A">Equal padding on opposite sides, equal margins left and right, and a centred 12-column grid.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="aspect-ratio:16/9;border-radius:24px;background:#FFFFFF;padding:32px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+        <div style="width:32%;height:12px;border-radius:999px;background:#E6D3A3"></div>
+        <div style="width:88%;height:24px;border-radius:999px;background:repeating-linear-gradient(135deg,#D6BA7A 0 2px,transparent 2px 8px)"></div>
+        <div style="width:64%;height:12px;border-radius:999px;background:#EFEAE0"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Let it breathe</h3><p style="margin:0;font-size:16px;line-height:24px;color:#3A3A3A">Use space, not boxes, to group content. Hairlines separate list rows; whitespace separates sections.</p></div>
+    </div>
+  </div>
+  <nav aria-label="Contents" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:round(clamp(64px,6.25vw,96px),4px)">
+    <sc-for list="{{ toc }}" as="t" hint-placeholder-count="11">
+      <a href="{{ t.href }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:#FFFFFF;color:#141414;font-size:16px;line-height:24px;font-weight:500" style-hover="border-color:#8A6A2A;color:#5E4A1E"><span style="color:#5E4A1E;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em">{{ t.n }}</span>{{ t.label }}</a>
+    </sc-for>
+  </nav>
+</header>
+
+<section id="logo" data-screen-label="01 Logo" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>01 · Logo</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Logo, <span style="color:#8A6A2A;font-weight:500">usage and symmetry.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">The wordmark is the primary signature. The S mark is a secondary device used as a large, low-opacity watermark and as the favicon. Neither is redrawn, recoloured or set in type.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:4/3;border-radius:24px;background:#FFFFFF;border:1px solid rgba(20,20,20,.12);display:flex;align-items:center;justify-content:center"><img src="assets/logo-color.svg" alt="Sanurhasta primary logo" style="height:48px;width:auto"></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Primary</span><span style="font-size:16px;line-height:24px;color:#4A4A4A">Colour wordmark on Paper, Linen or Stone. Default for header and footer.</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:4/3;border-radius:24px;background:#1C1711;display:flex;align-items:center;justify-content:center"><img src="assets/logo-white.svg" alt="Sanurhasta reverse logo" style="height:48px;width:auto"></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Reverse</span><span style="font-size:16px;line-height:24px;color:#4A4A4A">White wordmark on Espresso, Ink, or on photography under a 60%+ dark scrim.</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:4/3;border-radius:24px;background:#F8F5EF;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden"><img src="assets/s-mark.svg" alt="Sanurhasta S mark" style="height:96px;width:auto"><img src="assets/s-mark.svg" alt="" aria-hidden="true" style="position:absolute;right:-24px;bottom:-40px;height:200px;width:auto;opacity:.07;transform:rotate(-6deg)"></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">S mark</span><span style="font-size:16px;line-height:24px;color:#4A4A4A">Favicon, app icon, and watermark at 5–8% opacity, rotated within ±10°.</span></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:round(clamp(16px,3.125vw,32px),4px)">
+    <div style="border-radius:24px;background-color:#F8F5EF;background-image:linear-gradient(rgba(138,106,42,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(138,106,42,.1) 1px,transparent 1px);background-size:8px 8px;background-position:center;padding:64px 32px;display:flex;flex-direction:column;align-items:center;gap:32px">
+      <div style="position:relative;padding:32px;border:1px dashed #8A6A2A;background:rgba(255,255,255,.88)">
+        <div style="position:absolute;left:50%;top:-24px;bottom:-24px;width:1px;background:rgba(138,106,42,.5)"></div>
+        <div style="position:absolute;top:50%;left:-24px;right:-24px;height:1px;background:rgba(138,106,42,.5)"></div>
+        <span style="position:absolute;left:0;top:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E;background:rgba(230,211,163,.6)">X</span>
+        <span style="position:absolute;right:0;top:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E;background:rgba(230,211,163,.6)">X</span>
+        <span style="position:absolute;left:0;bottom:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E;background:rgba(230,211,163,.6)">X</span>
+        <span style="position:absolute;right:0;bottom:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E;background:rgba(230,211,163,.6)">X</span>
+        <img src="assets/logo-color.svg" alt="" style="height:64px;width:auto;display:block;position:relative">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:480px;text-align:center"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Clear space = X on all four sides</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">X is half the logo height (32px at a 64px logo, 16px at the 32px header logo). The zone is mirrored on both centre axes; nothing enters it, including other logos and edges of the screen.</span></div>
+    </div>
+    <div style="border-radius:24px;border:1px solid rgba(20,20,20,.12);padding:32px;display:flex;flex-direction:column;gap:32px">
+      <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Sizes</span>
+      <sc-for list="{{ logoSizes }}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:24px;border-top:1px solid rgba(20,20,20,.12)">
+          <img src="{{ s.src }}" alt="" style="{{ s.img }}">
+          <div style="display:flex;flex-direction:column;gap:4px;text-align:right"><span style="font-size:16px;line-height:24px;font-weight:500">{{ s.t }}</span><span style="font-size:16px;line-height:24px;color:#4A4A4A">{{ s.d }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:round(clamp(16px,3.125vw,32px),4px)">
+    <sc-for list="{{ misuse }}" as="m" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="{{ m.tile }}"><img src="assets/logo-color.svg" alt="" style="{{ m.img }}"><span style="position:absolute;inset:16px auto auto 16px;width:24px;height:24px;border-radius:50%;background:#8F2A1D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:16px;font-weight:600">✕</span></div>
+        <span style="font-size:16px;line-height:24px;color:#141414">{{ m.t }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.logo }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="colour" data-screen-label="02 Colour" style="background:#F8F5EF;padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>02 · Colour</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Warm neutrals, <span style="color:#8A6A2A;font-weight:500">bronze accents.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Paper and Linen carry most of the page. Ink sets the text. Bronze marks emphasis. Each swatch lists its contrast against the three canvases: AAA means 7:1 or more (any text), AAA Large means 4.5:1 or more (text 24px+ or 20px+ at 600), UI means 3:1 or more (icons, rules, borders only).</p>
+  </div>
+  <div style="display:flex;height:48px;border-radius:999px;overflow:hidden;margin-top:64px;border:1px solid rgba(20,20,20,.12)">
+    <div style="flex:56;background:#FFFFFF;display:flex;align-items:center;padding:0 16px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4A4A4A">Paper 56%</div>
+    <div style="flex:16;background:#F8F5EF;border-left:1px solid rgba(20,20,20,.12);display:flex;align-items:center;padding:0 16px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4A4A4A">Linen 16%</div>
+    <div style="flex:16;background:#141414;display:flex;align-items:center;padding:0 16px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF">Ink 16%</div>
+    <div style="flex:8;background:#5E4A1E;display:flex;align-items:center;padding:0 12px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF">8%</div>
+    <div style="flex:4;background:#E6D3A3"></div>
+  </div>
+  <sc-for list="{{ colorGroups }}" as="g" hint-placeholder-count="4">
+    <div style="display:flex;flex-direction:column;gap:24px;margin-top:64px">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px"><h3 style="margin:0;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;letter-spacing:-.01em">{{ g.t }}</h3><span style="font-size:16px;line-height:24px;color:#4A4A4A">{{ g.d }}</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:round(clamp(16px,3.125vw,32px),4px)">
+        <sc-for list="{{ g.items }}" as="c" hint-placeholder-count="4">
+          <div style="background:#FFFFFF;border-radius:24px;overflow:hidden;border:1px solid rgba(20,20,20,.12);display:flex;flex-direction:column">
+            <div style="{{ c.sw }}"><span style="{{ c.swText }}">Aa</span></div>
+            <div style="padding:20px 24px 24px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-size:16px;line-height:24px;font-weight:600">{{ c.name }}</span><span style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;color:#4A4A4A;font-variant-numeric:tabular-nums">{{ c.hex }}</span></div>
+              <span style="font-size:16px;line-height:24px;color:#3A3A3A;min-height:48px">{{ c.role }}</span>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <sc-for list="{{ c.cr }}" as="r" hint-placeholder-count="3">
+                  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 8px;padding:8px 0;border-top:1px solid rgba(20,20,20,.08)"><span style="font-size:12px;line-height:16px;color:#4A4A4A;font-weight:500;display:flex;align-items:center;gap:8px;white-space:nowrap"><span style="{{ r.dot }}"></span>{{ r.txt }}</span><span style="{{ r.badge }}">{{ r.g }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+  <div style="display:flex;flex-direction:column;gap:24px;margin-top:64px">
+    <h3 style="margin:0;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;letter-spacing:-.01em">Approved text pairings</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:round(clamp(16px,3.125vw,32px),4px)">
+      <sc-for list="{{ pairs }}" as="p" hint-placeholder-count="8">
+        <div style="{{ p.box }}">
+          <span style="{{ p.big }}">Assets built to endure.</span>
+          <span style="{{ p.small }}">Body text at 16/24 for paragraphs.</span>
+          <span style="{{ p.meta }}">{{ p.metaTxt }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.color }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="typeface" data-screen-label="03 Typeface" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>03 · Typeface</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Hanken <span style="color:#8A6A2A;font-weight:500">Grotesk.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">One family for everything. A clean grotesk with open apertures and tabular figures, so share prices, dates and hectares line up. Free under the SIL Open Font License, served from Google Fonts.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <div style="border-radius:24px;background:#141414;color:#FFFFFF;padding:round(clamp(24px,4vw,56px),4px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:400px">
+      <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#E6D3A3;font-weight:600">Primary · Latin</span>
+      <span style="font-size:round(clamp(128px,14vw,240px),4px);line-height:calc(1em + 4px);font-weight:400;letter-spacing:-.04em">Aa</span>
+      <span style="font-size:16px;line-height:24px;color:rgba(255,255,255,.88)">font-family: 'Hanken Grotesk', system-ui, sans-serif</span>
+    </div>
+    <div style="border-radius:24px;border:1px solid rgba(20,20,20,.12);padding:round(clamp(24px,4vw,56px),4px);display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:round(clamp(28px,2.6vw,40px),4px);line-height:calc(1em + 8px);letter-spacing:-.01em;word-break:break-all">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+      <span style="font-size:round(clamp(28px,2.6vw,40px),4px);line-height:calc(1em + 8px);letter-spacing:-.01em;word-break:break-all;color:#3A3A3A">abcdefghijklmnopqrstuvwxyz</span>
+      <span style="font-size:round(clamp(28px,2.6vw,40px),4px);line-height:calc(1em + 8px);font-variant-numeric:tabular-nums;color:#5E4A1E">0123456789 Rp % · → ↓</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding-top:24px;border-top:1px solid rgba(20,20,20,.12)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E">Weights loaded</span><span style="font-size:16px;line-height:24px">300 · 400 · 500 · 600</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E">Figures</span><span style="font-size:16px;line-height:24px">Tabular for data</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E">Languages</span><span style="font-size:16px;line-height:24px">Bahasa Indonesia, English</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="typography" data-screen-label="04 Typography" style="background:#F8F5EF;padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>04 · Typography</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Four header levels, <span style="color:#8A6A2A;font-weight:500">snapped&nbsp;to&nbsp;4.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Headings grow with the viewport and are rounded to the nearest 4px, so every rendered size is on the grid. Line height is the font size plus 4px or 8px. Samples below render at your current width ({{ vw }}px).</p>
+  </div>
+
+  <div style="margin-top:64px;background:#FFFFFF;border-radius:24px;padding:round(clamp(24px,4vw,56px),4px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">Line height rule</span><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Line height = font size + 4px or + 8px</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">Only two options. Large headlines, numerals and 12px caps add 4px for tight, compact lines. Everything people read in sentences adds 8px for comfortable spacing. Because every size is a multiple of 4, both keep every line on the 4px grid. In code it is written as line-height: calc(1em + 8px), so it follows the fluid size automatically.</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+      <sc-for list="{{ lhRules }}" as="r" hint-placeholder-count="4">
+        <div style="padding:16px 20px;border-radius:16px;background:#F8F5EF;display:flex;flex-direction:column;gap:4px"><span style="font-size:24px;line-height:32px;font-weight:400;color:#141414">{{ r.k }}</span><span style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5E4A1E">{{ r.u }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ r.e }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  <h3 style="margin:64px 0 24px;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;letter-spacing:-.01em">Header levels · maximum four</h3>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <sc-for list="{{ headers }}" as="h" hint-placeholder-count="5">
+      <div style="background:#FFFFFF;border-radius:24px;padding:round(clamp(24px,4vw,56px),4px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">{{ h.tag }}</span>
+          <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">{{ h.name }}</span>
+          <span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ h.desc }}</span>
+          <span style="font-size:16px;line-height:24px;font-weight:600;color:#5E4A1E">{{ h.lhTxt }}</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+            <sc-for list="{{ h.bp }}" as="b" hint-placeholder-count="4"><span style="display:flex;flex-direction:column;gap:4px;padding:12px 16px;border-radius:16px;background:#F8F5EF;font-variant-numeric:tabular-nums"><span style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5E4A1E">{{ b.w }}</span><span style="font-size:16px;line-height:24px;font-weight:600;color:#141414">{{ b.s }}</span><span style="font-size:12px;line-height:16px;font-weight:500;color:#4A4A4A">{{ b.l }}</span></span></sc-for>
+          </div>
+        </div>
+        <span style="{{ h.style }}">{{ h.sample }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="margin:64px 0 24px;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;letter-spacing:-.01em">Full type scale</h3>
+  <div style="background:#FFFFFF;border-radius:24px;overflow:hidden">
+    <div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.5fr) minmax(0,.9fr) repeat(4,minmax(0,1fr)) minmax(0,.6fr);gap:12px;padding:16px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.12);font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E">
+        <span>Token · used in v6</span><span>Weight</span><span>Line height</span><span>Mobile 360</span><span>Tablet 768</span><span>Desktop 1280</span><span>Wide 1920</span><span>Tracking</span>
+      </div>
+      <sc-for list="{{ scale }}" as="s" hint-placeholder-count="16">
+        <div style="display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.5fr) minmax(0,.9fr) repeat(4,minmax(0,1fr)) minmax(0,.6fr);gap:12px;padding:16px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.08);font-size:16px;line-height:24px;font-variant-numeric:tabular-nums;align-items:center">
+          <span style="display:flex;flex-direction:column"><span style="font-weight:600">{{ s.name }}</span><span style="font-size:12px;line-height:16px;color:#4A4A4A">{{ s.use }}</span></span>
+          <span>{{ s.w }}</span>
+          <span style="color:#5E4A1E;font-weight:600">{{ s.lh }}</span>
+          <sc-for list="{{ s.bp }}" as="b" hint-placeholder-count="4"><span style="display:flex;flex-direction:column"><span style="font-weight:600">{{ b.s }}</span><span style="font-size:12px;line-height:16px;color:#4A4A4A">{{ b.l }}</span></span></sc-for>
+          <span style="color:#4A4A4A">{{ s.tr }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">Body · 16/24 · 400</span>
+      <p style="margin:0;font-size:16px;line-height:24px;color:#3A3A3A;max-width:640px">A publicly listed company in hotels, property development, and strategic land banking in Indonesia. Paragraphs stay under 72 characters per line and never set below 16px.</p>
+      <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600;margin-top:8px">Lead · 16→20 · 400</span>
+      <p style="margin:0;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">We create lasting value for our shareholders, communities, and customers.</p>
+    </div>
+    <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">Links · 16/24 · 500</span>
+      <p style="margin:0;font-size:16px;line-height:24px;color:#3A3A3A">Inline: read the <a href="#typography" style="color:#5E4A1E;font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px" style-hover="color:#141414">2025 Annual Report</a> for the full figures.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+        <a href="#typography" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;line-height:24px;font-weight:500;color:#141414;border-bottom:1px solid #8A6A2A" style-hover="color:#5E4A1E">Company Profile <span aria-hidden="true">→</span></a>
+        <a href="#typography" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;line-height:24px;font-weight:500;color:#5E4A1E;border-bottom:2px solid #5E4A1E">Hover / focus</a>
+      </div>
+      <span style="font-size:16px;line-height:24px;color:#4A4A4A">Inline links are underlined and Bronze 700. Standalone links use Ink with a Bronze 500 rule, 44px tall hit area, and an arrow for direction.</span>
+    </div>
+    <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">Buttons · 16/24 · 500</span>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="#typography" style="display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:#141414;color:#FFFFFF;border-radius:999px;font-size:16px;line-height:24px;font-weight:500" style-hover="background:#5E4A1E;color:#FFFFFF">Send a Message <span aria-hidden="true">→</span></a>
+        <a href="#typography" style="display:inline-flex;align-items:center;gap:8px;padding:15px 27px;border:1px solid #141414;color:#141414;border-radius:999px;font-size:16px;line-height:24px;font-weight:500" style-hover="background:#141414;color:#FFFFFF">Secondary</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;padding:16px;border-radius:16px;background:#1C1711">
+        <a href="#typography" style="display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:#FFFFFF;color:#141414;border-radius:999px;font-size:16px;line-height:24px;font-weight:500" style-hover="background:#E6D3A3;color:#141414">On dark <span aria-hidden="true">→</span></a>
+      </div>
+      <span style="font-size:16px;line-height:24px;color:#4A4A4A">Pill, 56px tall (16 + 24 + 16). Outline buttons subtract the 1px border from padding so both are 56px.</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.type }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="weight" data-screen-label="05 Font Weight" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>05 · Font weight</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Four weights, <span style="color:#8A6A2A;font-weight:500">four jobs.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Hierarchy comes from size first and colour second. Weight changes are small and purposeful. 200, 700 and 800 are not loaded and not used.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;margin-top:64px;border-bottom:1px solid rgba(20,20,20,.12)">
+    <sc-for list="{{ weights }}" as="w" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;padding:32px 0;border-top:1px solid rgba(20,20,20,.12);align-items:center">
+        <span style="{{ w.sample }}">{{ w.demo }}</span>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">{{ w.n }} · {{ w.name }}</span>
+          <span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ w.use }}</span>
+          <span style="font-size:16px;line-height:24px;color:#4A4A4A"><span style="color:#5E4A1E;font-weight:600">Used in:</span> {{ w.where }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.weight }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="spacing" data-screen-label="06 Spacing" style="background:#F8F5EF;padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>06 · Spacing</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">One unit: <span style="color:#8A6A2A;font-weight:500">4&nbsp;pixels.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">A 4px base lets components scale evenly across every screen. Small steps (4–24) space elements inside a component; large steps (32–160) space components and sections. Fluid tokens are rounded to 4 at every width.</p>
+  </div>
+  <div style="margin-top:64px;border-radius:24px;background-color:#FFFFFF;background-image:linear-gradient(rgba(20,20,20,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.05) 1px,transparent 1px);background-size:8px 8px;padding:64px 32px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:24px">
+      <sc-for list="{{ spaces }}" as="s" hint-placeholder-count="14">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+          <div style="{{ s.box }}"></div>
+          <span style="font-size:16px;line-height:24px;font-weight:500;font-variant-numeric:tabular-nums">{{ s.v }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:round(clamp(16px,3.125vw,32px),4px)">
+    <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column">
+      <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;margin-bottom:16px">Fixed steps · inside components</span>
+      <sc-for list="{{ spaceUse }}" as="u" hint-placeholder-count="10">
+        <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid rgba(20,20,20,.08);font-size:16px;line-height:24px"><span style="font-weight:600;color:#5E4A1E;font-variant-numeric:tabular-nums">{{ u.v }}</span><span style="color:#3A3A3A">{{ u.t }}</span></div>
+      </sc-for>
+    </div>
+    <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column">
+      <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;margin-bottom:16px">Fluid tokens · between components</span>
+      <div style="display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:8px;padding:12px 0;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5E4A1E"><span>Token</span><span>360</span><span>768</span><span>1280</span><span>1920</span></div>
+      <sc-for list="{{ fluid }}" as="f" hint-placeholder-count="6">
+        <div style="display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:8px;padding:12px 0;border-top:1px solid rgba(20,20,20,.08);font-size:16px;line-height:24px;font-variant-numeric:tabular-nums">
+          <span style="display:flex;flex-direction:column"><span style="font-weight:600">{{ f.n }}</span><span style="font-size:12px;line-height:16px;color:#4A4A4A">{{ f.u }}</span></span>
+          <sc-for list="{{ f.bp }}" as="b" hint-placeholder-count="4"><span>{{ b }}</span></sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="margin-top:round(clamp(16px,3.125vw,32px),4px);border-radius:24px;background:#FFFFFF;padding:64px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Anatomy: primary button</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">16px top and bottom, 28px left and right, 8px between label and arrow. Height 56px. Two buttons side by side sit 12px apart. Every value is a step on the scale, and opposite sides always match.</span></div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:12px;padding:48px 0">
+      <div style="position:relative;display:inline-flex">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:#141414;color:#FFFFFF;border-radius:999px;font-size:16px;line-height:24px;font-weight:500;position:relative">Explore <span style="display:inline-block;width:8px;height:24px;background:rgba(230,211,163,.5)"></span><span aria-hidden="true">→</span></span>
+        <span style="position:absolute;left:0;top:0;bottom:0;width:28px;background:rgba(230,211,163,.36);border-radius:999px 0 0 999px"></span>
+        <span style="position:absolute;right:0;top:0;bottom:0;width:28px;background:rgba(230,211,163,.36);border-radius:0 999px 999px 0"></span>
+        <span style="position:absolute;left:28px;right:28px;top:0;height:16px;background:rgba(230,211,163,.36)"></span>
+        <span style="position:absolute;left:0;top:calc(100% + 8px);width:28px;text-align:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">28</span>
+        <span style="position:absolute;right:0;top:calc(100% + 8px);width:28px;text-align:center;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">28</span>
+        <span style="position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">16</span>
+        <span style="position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">56</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:12px;height:2px;background:#8A6A2A"></span><span style="font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">12</span></div>
+      <span style="display:inline-flex;align-items:center;padding:15px 27px;border:1px solid #141414;color:#141414;border-radius:999px;font-size:16px;line-height:24px;font-weight:500">Cancel</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.space }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="grid" data-screen-label="07 Layout Grid" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>07 · Layout grid</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Four breakpoints, <span style="color:#8A6A2A;font-weight:500">one centred grid.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Columns are fluid; margins and gutters are fixed per breakpoint and identical on both sides. Above 1920px the content stops at 1728px and the margins grow equally, so the layout stays centred.</p>
+  </div>
+  <div style="margin-top:64px;border-radius:24px;border:1px solid rgba(20,20,20,.12);overflow:hidden">
+    <div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) repeat(6,minmax(0,1fr));gap:12px;padding:16px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.12);font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E"><span>Breakpoint</span><span>Range</span><span>Columns</span><span>Gutter</span><span>Margin</span><span>Content</span><span>Nav</span></div>
+      <sc-for list="{{ grids }}" as="g" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) repeat(6,minmax(0,1fr));gap:12px;padding:16px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.08);font-size:16px;line-height:24px;font-variant-numeric:tabular-nums">
+          <span style="font-weight:600">{{ g.name }}</span><span>{{ g.range }}</span><span>{{ g.cols }}</span><span>{{ g.gut }}px</span><span>{{ g.mar }}px</span><span>{{ g.content }}</span><span>{{ g.nav }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:48px;margin-top:64px">
+    <sc-for list="{{ grids }}" as="g" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:32px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:360px">
+          <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">{{ g.range }}</span>
+          <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px)">{{ g.name }} · {{ g.ref }}px</span>
+          <span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ g.cols }} columns, {{ g.gut }}px gutter, {{ g.mar }}px margin. {{ g.note }}</span>
+        </div>
+        <div style="{{ g.frameWrap }}">
+          <div style="{{ g.frame }}">
+            <div style="{{ g.colsBox }}">
+              <sc-for list="{{ g.colList }}" as="c" hint-placeholder-count="4"><div style="background:rgba(214,186,122,.28);height:100%"></div></sc-for>
+            </div>
+            <div style="{{ g.contentBox }}">
+              <div style="{{ g.blockA }}"><div style="width:40%;height:8px;border-radius:999px;background:#8A6A2A"></div><div style="width:100%;height:16px;border-radius:999px;background:#141414"></div><div style="width:72%;height:16px;border-radius:999px;background:#141414"></div><div style="width:88%;height:8px;border-radius:999px;background:#4A4A4A;opacity:.5"></div></div>
+              <div style="{{ g.blockB }}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.grid }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="shape" data-screen-label="08 Shape & Radius" style="background:#F8F5EF;padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>08 · Shape &amp; corner radius</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Soft corners, <span style="color:#8A6A2A;font-weight:500">pill actions.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Containers use 24px corners. Anything you press is a pill or a circle. The arch is reserved for featured property imagery. Nested corners follow inner radius = outer radius − padding.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ radii }}" as="r" hint-placeholder-count="8">
+      <div style="background:#FFFFFF;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="height:160px;display:flex;align-items:center;justify-content:center"><div style="{{ r.shape }}"></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-size:16px;line-height:24px;font-weight:600">{{ r.n }}</span><span style="font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E;font-variant-numeric:tabular-nums">{{ r.v }}</span></div>
+        <span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ r.use }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top:round(clamp(16px,3.125vw,32px),4px);background:#FFFFFF;border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Nested radius</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">A 24px card with 8px padding holds a 16px inner image. A 24px card with 24px padding holds square-cornered content or a pill. This keeps the gap between curves even all the way round.</span></div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
+      <div style="width:200px;padding:8px;border-radius:24px;border:1px solid rgba(20,20,20,.12);background:#F8F5EF"><div style="height:128px;border-radius:16px;background:#D6BA7A"></div><div style="padding:12px 8px 4px;font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">24 − 8 = 16</div></div>
+      <div style="width:200px;padding:24px;border-radius:24px;border:1px solid rgba(20,20,20,.12);background:#F8F5EF;display:flex;flex-direction:column;gap:16px"><div style="height:16px;width:64%;border-radius:999px;background:#141414"></div><div style="height:40px;border-radius:999px;background:#5E4A1E"></div><div style="font-size:12px;line-height:16px;font-weight:600;color:#5E4A1E">24 − 24 = 0 / pill</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="elevation" data-screen-label="09 Elevation" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>09 · Elevation</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Mostly flat, <span style="color:#8A6A2A;font-weight:500">lifted with intent.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Five levels. Shadows are long, soft and warm-tinted, with negative spread so they sit under the object rather than around it. Offsets, blur and spread are all multiples of 4.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ elev }}" as="e" hint-placeholder-count="5">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="{{ e.stage }}"><div style="{{ e.card }}"><span style="{{ e.label }}">{{ e.n }}</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">{{ e.n }} · {{ e.name }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ e.use }}</span><span style="font-size:12px;line-height:16px;color:#4A4A4A;font-weight:500;word-break:break-word">{{ e.css }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:32px round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ vdd.shape }}" as="p" hint-placeholder-count="2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ p.pair }}" as="x" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+            <div style="{{ x.stage }}">
+              <sc-for list="{{ x.parts }}" as="q" hint-placeholder-count="1">
+                <sc-if value="{{ q.img }}" hint-placeholder-val="{{ false }}"><img src="{{ q.src }}" alt="" style="{{ q.s }}"></sc-if>
+                <sc-if value="{{ q.box }}" hint-placeholder-val="{{ false }}"><div style="{{ q.s }}">{{ q.t }}<sc-for list="{{ q.kids }}" as="k" hint-placeholder-count="0"><span style="{{ k.s }}">{{ k.t }}</span></sc-for></div></sc-if>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="{{ x.mark }}">{{ x.glyph }}</span><div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="{{ x.lab }}">{{ x.label }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ x.t }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="copy" data-screen-label="10 Copywriting Tone" style="background:#F8F5EF;padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>10 · Copywriting tone</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">Assured, plain, <span style="color:#8A6A2A;font-weight:500">and accountable.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">We write like a listed company that answers to shareholders: factual, calm and specific. Every line should hold up in an annual report and read naturally in both Bahasa Indonesia and English.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:round(clamp(16px,3.125vw,32px),4px);margin-top:64px">
+    <sc-for list="{{ voice }}" as="v" hint-placeholder-count="4">
+      <div style="background:#FFFFFF;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600">{{ v.n }}</span>
+        <span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px)">{{ v.t }}</span>
+        <span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ v.d }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top:round(clamp(16px,3.125vw,32px),4px);background:#FFFFFF;border-radius:24px;padding:round(clamp(24px,4vw,56px),4px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400">Headline pattern</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">A short plain statement in Ink, finished by an accent phrase in Bronze 500 at weight 500. Sentence case, ends with a full stop, 3–8 words, one accent per headline.</span></div>
+    <span style="font-size:round(clamp(28px,3vw,48px),4px);line-height:calc(1em + 8px);letter-spacing:-.03em">Three segments, <span style="color:#8A6A2A;font-weight:500">one integrated portfolio.</span></span>
+  </div>
+  <div style="margin-top:round(clamp(16px,3.125vw,32px),4px);background:#FFFFFF;border-radius:24px;padding:32px">
+    <span style="display:block;font-size:round(clamp(20px,1.875vw,24px),4px);line-height:calc(1em + 8px);font-weight:400;margin-bottom:16px">Mechanics</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));column-gap:32px">
+      <sc-for list="{{ mech }}" as="m" hint-placeholder-count="8">
+        <div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid rgba(20,20,20,.08)"><span style="font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;color:#5E4A1E;font-weight:600">{{ m.k }}</span><span style="font-size:16px;line-height:24px">{{ m.v }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px;margin-top:64px">
+    <sc-for list="{{ copyEx }}" as="c" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
+        <div style="background:#FFFFFF;border-radius:24px;padding:24px 32px;display:flex;flex-direction:column;gap:8px;border-top:4px solid #22604A"><span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#22604A;font-weight:600">Do · {{ c.k }}</span><span style="font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px)">{{ c.yes }}</span></div>
+        <div style="background:#FFFFFF;border-radius:24px;padding:24px 32px;display:flex;flex-direction:column;gap:8px;border-top:4px solid #8F2A1D"><span style="font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#8F2A1D;font-weight:600">Don’t</span><span style="font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">{{ c.no }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="wcag" data-screen-label="11 WCAG AAA Review" style="padding:round(clamp(96px,10vw,160px),4px) max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2))">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:round(clamp(40px,6.25vw,96px),4px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:16px;font-size:12px;line-height:16px;letter-spacing:.2em;text-transform:uppercase;color:#5E4A1E;font-weight:600"><span style="width:32px;height:1px;background:#8A6A2A"></span>11 · Accessibility</div>
+      <h2 style="margin:0;font-weight:400;font-size:round(clamp(32px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.03em">WCAG 2.2 <span style="color:#8A6A2A;font-weight:500">AAA review.</span></h2>
+    </div>
+    <p style="margin:0;max-width:640px;font-size:round(clamp(16px,1.5625vw,20px),4px);line-height:calc(1em + 8px);color:#3A3A3A">Each AAA criterion that applies to this site, how the system meets it, and what changed in Landing v6. Two items need content work outside the design and are marked Partial.</p>
+  </div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:64px">
+    <sc-for list="{{ wcagSum }}" as="s" hint-placeholder-count="3">
+      <div style="flex:1 1 200px;border-radius:24px;border:1px solid rgba(20,20,20,.12);padding:24px 32px;display:flex;flex-direction:column;gap:8px"><span style="font-weight:300;font-size:round(clamp(40px,3.75vw,56px),4px);line-height:calc(1em + 4px);letter-spacing:-.04em;font-variant-numeric:tabular-nums">{{ s.v }}</span><span style="font-size:16px;line-height:24px;color:#3A3A3A">{{ s.l }}</span></div>
+    </sc-for>
+  </div>
+  <div style="margin-top:32px;border-radius:24px;border:1px solid rgba(20,20,20,.12);overflow:hidden">
+    <div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.4fr) minmax(0,1.2fr) minmax(0,1.6fr) minmax(0,.7fr);gap:16px;padding:16px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.12);font-size:12px;line-height:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5E4A1E"><span>Criterion</span><span>Level</span><span>Requirement</span><span>How the system meets it</span><span>Status</span></div>
+      <sc-for list="{{ wcag }}" as="w" hint-placeholder-count="14">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.4fr) minmax(0,1.2fr) minmax(0,1.6fr) minmax(0,.7fr);gap:16px;padding:20px round(clamp(16px,2.5vw,32px),4px);border-bottom:1px solid rgba(20,20,20,.08);font-size:16px;line-height:24px;align-items:start">
+          <span style="font-weight:600">{{ w.c }}</span><span style="color:#4A4A4A">{{ w.l }}</span><span style="color:#3A3A3A">{{ w.r }}</span><span>{{ w.m }}</span><span style="{{ w.badge }}">{{ w.s }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#1C1711;color:#FFFFFF;padding:64px max(round(clamp(24px,5vw,96px),4px),calc((100% - 1728px) / 2));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px">
+  <img src="assets/logo-white.svg" alt="Sanurhasta" style="height:32px;width:auto">
+  <span style="font-size:16px;line-height:24px;color:rgba(255,255,255,.88)">Sanurhasta Design System v1.0 · Applied in <a href="Sanurhasta%20Landing%20v6%20Estate.dc.html" style="color:#E6D3A3;text-decoration:underline;text-underline-offset:4px">Landing v6</a></span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { vw: window.innerWidth };
+  componentDidMount() { this.onR = () => this.setState({ vw: window.innerWidth }); window.addEventListener('resize', this.onR); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); }
+  lum(h) { const c = [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16) / 255).map(v => v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4)); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; }
+  cr(a, b) { const x = this.lum(a), y = this.lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); }
+  grade(v) { return v >= 7 ? 'AAA' : v >= 4.5 ? 'AAA Large' : v >= 3 ? 'UI only' : 'Decorative'; }
+  badge(g) {
+    const m = { 'AAA': ['#22604A', '#FFFFFF'], 'AAA Large': ['#5E4A1E', '#FFFFFF'], 'UI only': ['#EFEAE0', '#3A3A3A'], 'Decorative': ['#FFFFFF', '#4A4A4A'] }[g];
+    return { padding: '4px 8px', borderRadius: '999px', background: m[0], color: m[1], fontSize: '12px', lineHeight: '16px', fontWeight: 600, whiteSpace: 'nowrap', border: g === 'Decorative' ? '1px solid rgba(20,20,20,.12)' : 'none' };
+  }
+  r4(x) { return Math.round(x / 4) * 4; }
+  fl(min, vw, max, w) { return this.r4(Math.min(max, Math.max(min, vw * w / 100))); }
+  renderVals() {
+    const vw = this.state.vw, BP = [360, 768, 1280, 1920];
+    const toc = ['Logo', 'Colour', 'Typeface', 'Typography', 'Font weight', 'Spacing', 'Layout grid', 'Shape & radius', 'Elevation', 'Copywriting', 'WCAG AAA'].map((l, i) => ({ label: l, n: String(i + 1).padStart(2, '0'), href: '#' + ['logo', 'colour', 'typeface', 'typography', 'weight', 'spacing', 'grid', 'shape', 'elevation', 'copy', 'wcag'][i] }));
+
+    const logoSizes = [
+      ['assets/logo-color.svg', 48, 'L · 48px', 'Cover pages, reports, large screens'],
+      ['assets/logo-color.svg', 32, 'M · 32px', 'Site header and footer (default)'],
+      ['assets/logo-color.svg', 24, 'S · 24px', 'Minimum digital size (8mm in print)'],
+      ['assets/s-mark.svg', 32, 'Mark · 32px', 'Favicon and app icon; minimum 16px']
+    ].map(s => ({ src: s[0], t: s[2], d: s[3], img: { height: s[1] + 'px', width: 'auto', display: 'block' } }));
+    const tile = { position: 'relative', aspectRatio: '4/3', borderRadius: '24px', background: '#FFFFFF', border: '1px solid rgba(20,20,20,.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' };
+    const misuse = [
+      ['Don’t stretch or squash', { height: '32px', width: 'auto', transform: 'scaleX(1.4)' }, {}],
+      ['Don’t rotate', { height: '32px', width: 'auto', transform: 'rotate(-12deg)' }, {}],
+      ['Don’t recolour', { height: '32px', width: 'auto', filter: 'hue-rotate(150deg) saturate(2)' }, {}],
+      ['Don’t add effects or shadows', { height: '32px', width: 'auto', filter: 'drop-shadow(4px 8px 4px rgba(0,0,0,.45))' }, {}],
+      ['Don’t place on low-contrast colour', { height: '32px', width: 'auto' }, { background: '#D6BA7A', border: 'none' }],
+      ['Don’t place on busy photos without a scrim', { height: '32px', width: 'auto' }, { backgroundImage: 'url("assets/web/hotel-01-beachfront-resort.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', border: 'none' }]
+    ].map(m => ({ t: m[0], img: m[1], tile: { ...tile, ...m[2] } }));
+
+    const C = (name, hex, role, on) => ({ name, hex, role, on });
+    const groups = [
+      ['Neutrals', 'Canvas and text', [
+        C('Ink', '#141414', 'Headings, body text, primary buttons.', 'light'),
+        C('Graphite', '#3A3A3A', 'Secondary text, lead paragraphs.', 'light'),
+        C('Slate', '#4A4A4A', 'Meta text and captions. Lightest grey allowed for text.', 'light'),
+        C('Paper', '#FFFFFF', 'Default canvas. Text on dark and photos.', 'dark'),
+        C('Linen', '#F8F5EF', 'Alternate section canvas.', 'dark'),
+        C('Stone', '#EFEAE0', 'Image placeholders and quiet fills.', 'dark'),
+        C('Espresso', '#1C1711', 'Dark canvas for the property gallery.', 'light')
+      ]],
+      ['Brand', 'Emphasis and accent', [
+        C('Bronze 700', '#5E4A1E', 'Accent text at any size: eyebrows, links, badges, hover.', 'light'),
+        C('Bronze 500', '#8A6A2A', 'Accent words in headings 24px+, rules, icons. Never body text.', 'light'),
+        C('Champagne', '#E6D3A3', 'Accent text, rules and controls on dark and photography.', 'dark'),
+        C('Sand', '#D6BA7A', 'Accent phrase in headings on Espresso.', 'dark')
+      ]],
+      ['Functional', 'State and data', [
+        C('Evergreen', '#22604A', 'Positive change (share price up). On Paper only.', 'light'),
+        C('Brick', '#8F2A1D', 'Errors and negative change. Documentation “Don’t”.', 'light')
+      ]],
+      ['Illustration', 'Business segment diagram only — never text', [
+        C('Land', '#8FAE7A', 'Land banking segment.', 'none'),
+        C('Residence', '#D5CCBD', 'Real estate segment.', 'none'),
+        C('Hospitality', '#CDB27A', 'Hotels and resorts segment.', 'none')
+      ]]
+    ];
+    const grounds = [['Paper', '#FFFFFF'], ['Linen', '#F8F5EF'], ['Espresso', '#1C1711']];
+    const colorGroups = groups.map(g => ({ t: g[0], d: g[1], items: g[2].map(c => ({ ...c,
+      sw: { height: '128px', background: c.hex, display: 'flex', alignItems: 'flex-end', padding: '16px 24px', borderBottom: '1px solid rgba(20,20,20,.08)' },
+      swText: { fontSize: '32px', lineHeight: '36px', color: this.cr(c.hex, '#141414') > this.cr(c.hex, '#FFFFFF') ? '#141414' : '#FFFFFF' },
+      cr: grounds.filter(gr => gr[1] !== c.hex).map(gr => { const v = this.cr(c.hex, gr[1]); const g2 = c.on === 'none' ? 'Decorative' : this.grade(v); return { on: gr[0], txt: 'on ' + gr[0] + ' · ' + v.toFixed(2) + ':1', v: v.toFixed(2), g: g2, badge: this.badge(g2), dot: { width: '12px', height: '12px', borderRadius: '4px', background: gr[1], border: '1px solid rgba(20,20,20,.24)' } }; })
+    })) }));
+    const pairs = [
+      ['Ink on Paper', '#141414', '#FFFFFF', '#141414'], ['Graphite on Linen', '#3A3A3A', '#F8F5EF', '#141414'],
+      ['Bronze 700 on Paper', '#5E4A1E', '#FFFFFF', '#141414'], ['Bronze 500 on Paper · 24px+', '#8A6A2A', '#FFFFFF', '#141414', true],
+      ['Paper on Ink', '#FFFFFF', '#141414', '#FFFFFF'], ['Champagne on Espresso', '#E6D3A3', '#1C1711', '#FFFFFF'],
+      ['Paper on Bronze 700', '#FFFFFF', '#5E4A1E', '#FFFFFF'], ['Slate on Stone', '#4A4A4A', '#EFEAE0', '#141414']
+    ].map(p => { const v = this.cr(p[1], p[2]); const big = p[4]; return { label: p[0], metaTxt: p[0] + ' · ' + v.toFixed(2) + ':1 · ' + (big ? 'AAA Large' : this.grade(v)), v: v.toFixed(2), g: big ? 'AAA Large' : this.grade(v),
+      box: { background: p[2], borderRadius: '24px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px', border: '1px solid rgba(20,20,20,.12)' },
+      big: { fontSize: '24px', lineHeight: '32px', color: p[1], letterSpacing: '-.01em' },
+      small: { fontSize: '16px', lineHeight: '24px', color: big ? p[3] : p[1] },
+      meta: { fontSize: '12px', lineHeight: '16px', fontWeight: 600, color: big ? '#5E4A1E' : p[1] } }; });
+
+    const T = (name, use, w, min, v, max, add, tr, extra) => ({ name, use, w, min, v, max, add, tr, extra: extra || {} });
+    const scaleDef = [
+      T('H1 · Display', 'Hero headline, Contact “Let’s build together.”', 400, 40, 5, 80, 4, '-3.5%'),
+      T('H2 · Section', 'All section headers, featured-property headline', 400, 32, 3.75, 56, 4, '-3%'),
+      T('H3 · Panel & Statement', 'About Us statement, Governance & Sustainability panels, mega-menu title, mobile menu', 400, 28, 3, 48, 8, '-3%'),
+      T('H4 · Card & Item', 'News titles, report rows, property names, featured name, segment legend', 400, 20, 1.875, 24, 8, '-1%'),
+      T('Lead', 'About intro, Our Value list', 400, 16, 1.5625, 20, 8, '0'),
+      T('Body', 'Paragraphs, nav links, contact details', 400, 16, 0, 16, 8, '0'),
+      T('Body strong', 'Award titles, market data', 500, 16, 0, 16, 8, '0'),
+      T('Link', 'Company Profile, View all news', 500, 16, 0, 16, 8, '0'),
+      T('Button', 'All pill buttons, Menu', 500, 16, 0, 16, 8, '0'),
+      T('Eyebrow', 'Section eyebrows, footer labels', 600, 12, 0, 12, 4, '+20%'),
+      T('Label', 'Chips, badges, report types, dates', 600, 12, 0, 12, 4, '+12%'),
+      T('Numeral XL', 'About stats (12 · 28 · 1,240)', 300, 48, 4.4, 64, 4, '-4%'),
+      T('Numeral L', 'Share price, news day', 300, 40, 3.75, 56, 4, '-4%'),
+      T('Numeral M', 'Hero slide counter', 400, 28, 2.6, 40, 4, '0')
+    ];
+    const sz = (t, w) => t.v ? this.fl(t.min, t.v, t.max, w) : t.min;
+    const scale = scaleDef.map(t => ({ name: t.name, use: t.use, w: t.w, tr: t.tr, lh: t.add ? 'size + ' + t.add : '= size', bp: BP.map(w => { const s = sz(t, w); return { s: s + 'px', l: 'Line height ' + (s + t.add) + 'px' }; }) }));
+    const lhNote = (t) => 'Line height: ' + (t.add ? 'size + ' + t.add + 'px' : 'equal to size (1.0)');
+    const hs = (t, extra) => ({ fontSize: sz(t, vw) + 'px', lineHeight: (sz(t, vw) + t.add) + 'px', fontWeight: t.w, letterSpacing: t.tr === '0' ? '0' : (parseFloat(t.tr) / 100) + 'em', textWrap: 'balance', ...extra });
+    const headers = [
+      [0, 'h1 · once per page', 'H1 · Display', 'The hero headline and the closing call to action. One idea, 2–5 words per line, sentence case. In the hero it also caps at 9vh so it never pushes the slideshow below the fold.', 'Building spaces, growing value.'],
+      [1, 'h2 · one per section', 'H2 · Section', 'Opens every major section, always with an eyebrow above it. Uses the headline pattern: plain statement + Bronze accent phrase.', 'Transparency for every shareholder.'],
+      [2, 'h2 / h3 / p · inside a section', 'H3 · Panel & Statement', 'Large panels that hold their own content (Governance, Sustainability, mega-menu title) and the About Us mission statement. Also the mobile menu links.', 'Integrity at the foundation of every decision.'],
+      [3, 'h3 / h4 · inside cards and lists', 'H4 · Card & Item', 'News titles, report rows, property names and list items such as the segment legend. Two lines maximum; a Body description can follow directly below.', 'Sanurhasta announces a new resort development on Bali’s east coast']
+].map(h => { const t = scaleDef[h[0]]; return { tag: h[1], name: h[2], desc: h[3], sample: h[4], lhTxt: lhNote(t) + ' · Weight ' + t.w + ' · Tracking ' + t.tr, bp: BP.map(w => ({ w: w + 'px screen', s: 'Size ' + sz(t, w) + 'px', l: 'Line height ' + (sz(t, w) + t.add) + 'px' })), style: hs(t, h[0] === 0 || h[0] === 1 ? {} : {}) }; });
+
+    const weights = [
+      ['300', 'Light', 'Large numerals only (40px and above), where thin strokes stay legible and figures feel precise.', 'Stats, share price, news dates', 'Rp 1,245', { fontWeight: 300, fontSize: '64px', lineHeight: '68px', letterSpacing: '-.04em', fontVariantNumeric: 'tabular-nums' }],
+      ['400', 'Regular', 'The default for every heading and all body text. Large headlines stay Regular to keep the tone calm.', 'H1–H4, Lead, Body', 'Building spaces', { fontWeight: 400, fontSize: '48px', lineHeight: '52px', letterSpacing: '-.03em' }],
+      ['500', 'Medium', 'Emphasis without shouting: the Bronze accent phrase in headings, buttons, links, item titles and inline data.', 'Accent phrase, Button, Link, Body strong', 'growing value.', { fontWeight: 500, fontSize: '48px', lineHeight: '52px', letterSpacing: '-.03em', color: '#8A6A2A' }],
+      ['600', 'SemiBold', 'Small uppercase text at 12px, where extra weight keeps letters distinct at tight sizes.', 'Eyebrow, Label, badges, table headers', 'INVESTOR RELATIONS', { fontWeight: 600, fontSize: '24px', lineHeight: '32px', letterSpacing: '.2em', color: '#5E4A1E' }]
+    ].map(w => ({ n: w[0], name: w[1], use: w[2], where: w[3], demo: w[4], sample: w[5] }));
+
+    const tints = ['#E8C9C0', '#C9DCC1', '#C3DCE0', '#D9CDE8', '#EBC9D6', '#F1D3B8', '#C9DCC1', '#C6D3EC', '#F1DFAE', '#E6D3A3', '#D6BA7A', '#CDB27A', '#B7CFA0', '#EFEAE0'];
+    const spaces = [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 160].map((v, i) => ({ v, box: { width: v + 'px', height: v + 'px', background: tints[i], borderRadius: v >= 16 ? '4px' : '0' } }));
+    const spaceUse = [
+      [4, 'Icon to label nudge, stacked label + value'], [8, 'Chip gaps, flag to code, label to arrow'], [12, 'Adjacent buttons, list rows (12 top & bottom)'],
+      [16, 'Eyebrow to rule, card text stack, list row padding'], [20, 'Card inner top padding with a header above'], [24, 'Eyebrow to heading, card padding (S)'],
+      [32, 'Card padding (M), grid gutter on desktop'], [40, 'Contact columns, footer groups'], [48, 'Header to content inside a panel'], [64, 'Section intro to content']
+    ].map(u => ({ v: u[0], t: u[1] }));
+    const fluid = [
+      ['Margin', 'Page edge, left = right', 24, 5, 96], ['Gutter', 'Between grid columns', 16, 3.125, 32],
+      ['Stack', 'Text column ↔ content column', 40, 6.25, 96], ['Inset', 'Large card padding', 24, 4, 56],
+      ['Section S', 'Section top after a rule', 64, 6.25, 96], ['Section', 'Section top & bottom', 96, 10, 160]
+    ].map(f => ({ n: f[0], u: f[1], bp: BP.map(w => this.fl(f[2], f[3], f[4], w)) }));
+
+    const G = [
+      ['Mobile', '360–767', 4, 16, 24, 360, 'Fluid', 'Menu', 'Stack every column; media goes full width.', 9 / 16, 26],
+      ['Tablet', '768–1279', 8, 24, 40, 768, 'Fluid', 'Menu', 'Text spans 4 columns beside 4 of media, or stacks at 8.', 4 / 3, 46],
+      ['Desktop', '1280–1919', 12, 32, 64, 1280, 'Fluid', 'Full ≥1440', 'Text spans 5 columns, media 7. Primary nav expands at 1440.', 16 / 10, 76],
+      ['Wide', '≥1920', 12, 32, 96, 1920, 'Max 1728', 'Full', 'Content stops at 1728px; margins grow equally on both sides.', 16 / 9, 100]
+    ];
+    const grids = G.map(g => {
+      const W = g[5], cw = W - 2 * g[4];
+      const span = g[2] === 4 ? ['1 / -1', '1 / -1'] : g[2] === 8 ? ['1 / 5', '5 / 9'] : ['1 / 6', '7 / 13'];
+      return { name: g[0], range: g[1], cols: g[2], gut: g[3], mar: g[4], ref: W, content: g[6] === 'Fluid' ? cw + 'px @' + W : '1728px', nav: g[7], note: g[8],
+        colList: Array.from({ length: g[2] }, (_, i) => i),
+        frameWrap: { width: '100%', maxWidth: g[10] + '%', minWidth: '160px' },
+        frame: { position: 'relative', width: '100%', aspectRatio: String(1 / (1 / g[9])), background: '#FFFFFF', border: '1px solid rgba(20,20,20,.24)', borderRadius: '8px', overflow: 'hidden' },
+        colsBox: { position: 'absolute', inset: 0, padding: `0 ${(g[4] / W * 100).toFixed(3)}%`, display: 'grid', gridTemplateColumns: `repeat(${g[2]},minmax(0,1fr))`, columnGap: `${(g[3] / cw * 100).toFixed(3)}%` },
+        contentBox: { position: 'absolute', inset: 0, padding: `12% ${(g[4] / W * 100).toFixed(3)}% 0`, display: 'grid', gridTemplateColumns: `repeat(${g[2]},minmax(0,1fr))`, columnGap: `${(g[3] / cw * 100).toFixed(3)}%`, rowGap: '8%', alignContent: 'start' },
+        blockA: { gridColumn: span[0], display: 'flex', flexDirection: 'column', gap: '8px' },
+        blockB: { gridColumn: span[1], aspectRatio: '4/3', borderRadius: '4px', background: 'repeating-linear-gradient(135deg,rgba(138,106,42,.35) 0 2px,rgba(138,106,42,.08) 2px 8px)' }
+      };
+    });
+
+    const radii = [
+      ['None', '0', 'Full-bleed media, the expanded hero', { width: '120px', height: '120px', background: '#D6BA7A' }],
+      ['XS', '4px', 'Swatches, flags, focus outlines', { width: '120px', height: '120px', background: '#D6BA7A', borderRadius: '4px' }],
+      ['S', '8px', 'Small thumbnails, grid previews', { width: '120px', height: '120px', background: '#D6BA7A', borderRadius: '8px' }],
+      ['M', '16px', 'Mega-menu images, inner media in 8px-padded cards', { width: '120px', height: '120px', background: '#D6BA7A', borderRadius: '16px' }],
+      ['L', '24px', 'Cards, panels, news and property imagery, menus', { width: '120px', height: '120px', background: '#D6BA7A', borderRadius: '24px' }],
+      ['Pill', '999px', 'Buttons, chips, badges, award cards', { width: '120px', height: '56px', background: '#5E4A1E', borderRadius: '999px' }],
+      ['Circle', '50%', 'Icon buttons (44px), thumbnails, year seals', { width: '96px', height: '96px', background: '#5E4A1E', borderRadius: '50%' }],
+      ['Arch', '999 999 24 24', 'Featured property cards only', { width: '96px', height: '128px', background: '#8A6A2A', borderRadius: '999px 999px 24px 24px' }]
+    ].map(r => ({ n: r[0], v: r[1], use: r[2], shape: r[3] }));
+
+    const E = [
+      ['E0', 'Flat', 'Default for everything. Hairline border separates when needed.', '0 0 0 1px rgba(20,20,20,.12)', '#FFFFFF', '#F8F5EF'],
+      ['E1', 'Hover', 'Lift on hover for clickable cards (with translateY −4px).', '0 16px 40px -24px rgba(60,48,20,.40)', '#FFFFFF', '#F8F5EF'],
+      ['E2', 'Card', 'Data cards that sit above a Linen section (share price).', '0 32px 64px -32px rgba(60,48,20,.20)', '#FFFFFF', '#F8F5EF'],
+      ['E3', 'Overlay', 'Mega menu, dialogs, anything floating over content.', '0 40px 80px -32px rgba(20,20,20,.28), 0 0 0 1px rgba(20,20,20,.06)', '#FFFFFF', '#F8F5EF'],
+      ['E4', 'Media on dark', 'Focused property image on Espresso, with Champagne edge.', '0 40px 80px -20px rgba(0,0,0,.60), 0 0 0 1px rgba(230,211,163,.70)', '#2A2219', '#1C1711']
+    ];
+    const elev = E.map(e => ({ n: e[0], name: e[1], use: e[2], css: 'box-shadow: ' + e[3],
+      stage: { height: '240px', borderRadius: '24px', background: e[5], display: 'flex', alignItems: 'center', justifyContent: 'center' },
+      card: { width: '160px', height: '120px', borderRadius: '24px', background: e[4], boxShadow: e[3], display: 'flex', alignItems: 'center', justifyContent: 'center', transform: e[0] === 'E1' ? 'translateY(-4px)' : 'none' },
+      label: { fontSize: '24px', lineHeight: '32px', color: e[0] === 'E4' ? '#E6D3A3' : '#5E4A1E', fontWeight: 500 } }));
+
+    const voice = [
+      ['01', 'Assured', 'State facts with confidence and let numbers carry the weight. No hype words, no exclamation marks.'],
+      ['02', 'Plain', 'Short sentences, common words, active voice. Explain abbreviations the first time: Good Corporate Governance (GCG).'],
+      ['03', 'Considered', 'Talk about long horizons: communities, environment, future generations. Avoid urgency and sales pressure.'],
+      ['04', 'Equal in two languages', 'Write ID and EN as equals. Keep sentences short enough to translate cleanly; allow 30% extra length for Bahasa.']
+    ].map(v => ({ n: v[0], t: v[1], d: v[2] }));
+    const mech = [
+      ['Headlines', 'Sentence case, full stop, one Bronze accent phrase'], ['Buttons', 'Title Case verb + object: “Explore Our Business”'],
+      ['Text links', 'Sentence case, describes destination: “View all news”'], ['Eyebrows', 'Title Case noun, set in caps by style, not typed in caps'],
+      ['Currency', 'Rp 1,245 · Rp 8.4T (space after Rp, comma thousands in EN)'], ['Dates & time', '18 Sep 2026 · 16:00 WIB'],
+      ['Ticker', 'MINA · IDX'], ['Arrows', '→ for navigation, ↓ for downloads, hidden from screen readers']
+    ].map(m => ({ k: m[0], v: m[1] }));
+    const copyEx = [
+      ['Headline', 'Assets built to endure and grow in value.', 'The BEST luxury properties in all of Indonesia!!!'],
+      ['Business', 'Villas and residences planned as one community.', 'We leverage synergistic ecosystems to unlock best-in-class lifestyle value.'],
+      ['Investors', 'H1 2026 results: hospitality revenue posts double-digit growth.', 'Amazing results!! Revenue is way up — don’t miss out on investing now.'],
+      ['Call to action', 'Investor Information Center →', 'Click here'],
+      ['Sustainability', 'Coastal conservation program with local communities enters its third year.', 'We are 100% green and totally save the planet.']
+    ].map(c => ({ k: c[0], yes: c[1], no: c[2] }));
+
+    const dd = {
+      logo: { yes: ['Use the primary logo on Paper, Linen or Stone and the reverse logo on Espresso or a dark scrim.', 'Keep clear space of half the logo height on all four sides.', 'Align the logo to the page margin and centre it vertically in the 80px header.'],
+        no: ['Stretch, rotate, recolour, outline or add effects to the logo.', 'Set the logo below 24px tall or place it inside a sentence.', 'Use the S mark as a replacement for the wordmark in the header.'] },
+      color: { yes: ['Use Ink, Graphite or Slate for text on light grounds; all three pass AAA.', 'Use Bronze 700 for small accent text and Bronze 500 only at 24px and above.', 'Keep roughly 70% light canvas, 16% Ink and under 12% bronze per screen.'],
+        no: ['Set body text in Bronze 500, Champagne or Sand on light grounds.', 'Lower text opacity to make it secondary; pick a lighter token instead.', 'Introduce new hues. Segment colours are for the diagram only.'] },
+      type: { yes: ['Use only four header levels: H1 to open and close the page, one H2 per section, H3 for panels and statements, H4 for cards.', 'Pair every section header with an eyebrow above it.', 'Keep paragraphs between 45 and 72 characters per line with 1.5× line height.'],
+        no: ['Use sizes off the scale (13, 14, 15, 17px) or unrounded fluid values.', 'Set long passages in caps or centre-align paragraphs.', 'Skip heading levels for visual size; change the token instead.'] },
+      weight: { yes: ['Use 400 for all headings and body; let size create hierarchy.', 'Use 500 for the accent phrase, buttons, links and item titles.', 'Reserve 600 for 12px caps and 300 for numerals 48px and up.'],
+        no: ['Use 300 below 48px; strokes become too thin to read.', 'Bold whole headlines or whole paragraphs.', 'Mix more than two weights in one line.'] },
+      space: { yes: ['Use only scale values: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 160.', 'Mirror padding: top equals bottom, left equals right.', 'Use bigger gaps between groups than within them.'],
+        no: ['Use odd values like 6, 10, 14, 18 or 22px.', 'Add margins to individual items in a row; use gap on the parent.', 'Separate everything with boxes and borders when space would do.'] },
+      grid: { yes: ['Align every text block and image edge to a column line.', 'Use the same margin on the left and right at every breakpoint.', 'Stack to a single column on mobile and keep reading order the same.'],
+        no: ['Let content run past the 1728px maximum on wide screens.', 'Use gutters smaller than 16px or mix gutters inside one row.', 'Hide essential content at small breakpoints.'] },
+      shape: { yes: ['Use 24px corners for containers and pills for anything pressable.', 'Calculate inner radius as outer radius minus padding.', 'Use E0 by default and add lift only on interaction or overlay.'],
+        no: ['Mix radii within one card group.', 'Stack multiple shadows or use pure black shadows on light grounds.', 'Use the arch shape outside featured property imagery.'] }
+    };
+
+    const B = (s, t, kids) => ({ box: true, img: false, s, t: t || '', kids: kids || [] });
+    const I = (src, s) => ({ img: true, box: false, src, s, kids: [] });
+    const K = (s, t) => ({ s, t: t || '' });
+    const LG = 'assets/logo-color.svg', LW = 'assets/logo-white.svg';
+    const mk = (ok, t, bg, parts, ex) => ({ t, parts, glyph: ok ? '✓' : '✕', label: ok ? 'Do' : 'Don’t',
+      stage: { height: '224px', borderRadius: '24px', background: bg || '#FFFFFF', border: '1px solid rgba(20,20,20,.12)', boxShadow: 'inset 0 4px 0 ' + (ok ? '#22604A' : '#8F2A1D'), display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', padding: '24px', overflow: 'hidden', position: 'relative', ...(ex || {}) },
+      mark: { flex: 'none', width: '24px', height: '24px', borderRadius: '50%', background: ok ? '#22604A' : '#8F2A1D', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', lineHeight: '16px', fontWeight: 600 },
+      lab: { fontSize: '12px', lineHeight: '16px', letterSpacing: '.2em', textTransform: 'uppercase', fontWeight: 600, color: ok ? '#22604A' : '#8F2A1D', paddingTop: '4px' } });
+    const P2 = (a, b) => ({ pair: [mk(true, ...a), mk(false, ...b)] });
+    const chip = { padding: '8px 16px', border: '1px solid rgba(20,20,20,.24)', borderRadius: '999px', fontSize: '12px', lineHeight: '16px', fontWeight: 600, letterSpacing: '.12em', textTransform: 'uppercase', color: '#3A3A3A' };
+    const cols6 = { position: 'absolute', inset: '0', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(6,minmax(0,1fr))', columnGap: '8px' };
+    const colK = Array.from({ length: 6 }, (_, i) => K({ position: 'absolute', top: '0', bottom: '0', left: `calc(${i} * ((100% - 40px) / 6 + 8px))`, width: 'calc((100% - 40px) / 6)', background: 'rgba(214,186,122,.28)' }));
+    const colsF = { position: 'absolute', top: '0', bottom: '0', left: '24px', right: '24px' };
+    const blk = (left, top, h, bg, r) => ({ position: 'absolute', left, top, width: 'calc((100% - 88px) / 2 + 16px)', height: h, background: bg, borderRadius: r });
+    const content6 = { position: 'absolute', left: '0', right: '0', top: '48px', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(6,minmax(0,1fr))', columnGap: '8px', alignItems: 'start' };
+    const stripe = 'repeating-linear-gradient(135deg,rgba(138,106,42,.4) 0 2px,rgba(138,106,42,.08) 2px 8px)';
+    const ml = (l, r, c) => [B({ position: 'absolute', top: '24px', bottom: '24px', left: l + 'px', right: r + 'px', background: stripe, borderRadius: '8px' }),
+      B({ position: 'absolute', left: '0', width: l + 'px', top: '50%', transform: 'translateY(-50%)', textAlign: 'center', fontSize: '12px', lineHeight: '16px', fontWeight: 600, color: c }, String(l)),
+      B({ position: 'absolute', right: '0', width: r + 'px', top: '50%', transform: 'translateY(-50%)', textAlign: 'center', fontSize: '12px', lineHeight: '16px', fontWeight: 600, color: c }, String(r))];
+    const vdd = {
+      logo: [
+        P2(['Keep half the logo height clear on every side.', '#FFFFFF', [I(LG, { height: '32px', width: 'auto', outline: '1px dashed #8A6A2A', outlineOffset: '16px' })]],
+           ['Don’t let text, edges or other logos enter the clear space.', '#FFFFFF', [I(LG, { height: '32px', width: 'auto', outline: '1px dashed #8F2A1D', outlineOffset: '16px' }), B({ fontSize: '16px', lineHeight: '24px', color: '#141414', background: '#EFEAE0', padding: '4px 8px', borderRadius: '4px', marginLeft: '-8px' }, 'Our Business')], { flexDirection: 'row', gap: '0' }]),
+        P2(['Use the white logo on Espresso or a dark scrim.', '#1C1711', [I(LW, { height: '32px', width: 'auto' })]],
+           ['Don’t place the colour logo on dark grounds.', '#1C1711', [I(LG, { height: '32px', width: 'auto' })]])
+      ],
+      color: [
+        P2(['Bronze 500 for accent words at 24px and above.', '#FFFFFF', [B({ fontSize: '32px', lineHeight: '40px', letterSpacing: '-.03em', color: '#141414', textAlign: 'center' }, 'Growing ', [K({ color: '#8A6A2A', fontWeight: 500 }, 'value.')])]],
+           ['Don’t set body text in Sand, Champagne or Bronze 500.', '#FFFFFF', [B({ fontSize: '16px', lineHeight: '24px', color: '#D6BA7A', maxWidth: '240px' }, 'A publicly listed company in hotels, property and land banking.')]]),
+        P2(['Make text secondary with Graphite or Slate.', '#FFFFFF', [B({ fontSize: '20px', lineHeight: '28px', fontWeight: 500, color: '#141414', alignSelf: 'stretch' }, 'Hasta Retreat'), B({ fontSize: '16px', lineHeight: '24px', color: '#4A4A4A', alignSelf: 'stretch' }, 'Ubud, Bali · 48 villas')], { alignItems: 'flex-start', gap: '4px' }],
+           ['Don’t fade text with opacity; it drops below 7:1.', '#FFFFFF', [B({ fontSize: '20px', lineHeight: '28px', fontWeight: 500, color: '#141414', alignSelf: 'stretch' }, 'Hasta Retreat'), B({ fontSize: '16px', lineHeight: '24px', color: 'rgba(20,20,20,.36)', alignSelf: 'stretch' }, 'Ubud, Bali · 48 villas')], { alignItems: 'flex-start', gap: '4px' }]),
+        P2(['Mostly light canvas, Ink for text, a little bronze.', '#FFFFFF', [B({ display: 'flex', width: '100%', height: '48px', borderRadius: '999px', overflow: 'hidden', border: '1px solid rgba(20,20,20,.12)' }, '', [K({ flex: '56', background: '#FFFFFF' }), K({ flex: '16', background: '#F8F5EF' }), K({ flex: '16', background: '#141414' }), K({ flex: '8', background: '#5E4A1E' }), K({ flex: '4', background: '#E6D3A3' })])]],
+           ['Don’t add hues from outside the palette.', '#FFFFFF', [B({ display: 'flex', width: '100%', height: '48px', borderRadius: '999px', overflow: 'hidden' }, '', [K({ flex: '1', background: '#2F6FD6' }), K({ flex: '1', background: '#D63F3F' }), K({ flex: '1', background: '#8E44C9' }), K({ flex: '1', background: '#F2B705' }), K({ flex: '1', background: '#2BB673' })])]])
+      ],
+      type: [
+        P2(['Pair each section header with an eyebrow; sentence case, left aligned.', '#FFFFFF', [B({ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '12px', lineHeight: '16px', letterSpacing: '.2em', textTransform: 'uppercase', fontWeight: 600, color: '#5E4A1E', alignSelf: 'stretch' }, '', [K({ width: '32px', height: '1px', background: '#8A6A2A' }), K({}, 'Investor Relations')]), B({ fontSize: '28px', lineHeight: '32px', letterSpacing: '-.03em', color: '#141414', alignSelf: 'stretch', textWrap: 'balance' }, 'Transparency for every ', [K({ color: '#8A6A2A', fontWeight: 500 }, 'shareholder.')])], { alignItems: 'flex-start', gap: '16px' }],
+           ['Don’t set headings in caps, bold or centred.', '#FFFFFF', [B({ fontSize: '20px', lineHeight: '24px', fontWeight: 700, textTransform: 'uppercase', textAlign: 'center', letterSpacing: '.04em', color: '#141414' }, 'Transparency for every shareholder and stakeholder')]]),
+        P2(['Body 16/24, left aligned, 45–72 characters per line.', '#FFFFFF', [B({ fontSize: '16px', lineHeight: '24px', color: '#3A3A3A', maxWidth: '280px' }, 'We create lasting value for shareholders, communities and customers through quality products and services.')]],
+           ['Don’t justify, go below 16px or tighten the leading.', '#FFFFFF', [B({ fontSize: '12px', lineHeight: '13px', color: '#3A3A3A', textAlign: 'justify' }, 'We create lasting value for our shareholders, communities, and customers through quality products and services, with sustainability at the core for generations to come, across every hotel, residence and parcel of land we develop in Indonesia.')]]),
+        P2(['Balance headline lines so the last line has 2+ words.', '#FFFFFF', [B({ fontSize: '28px', lineHeight: '36px', letterSpacing: '-.03em', color: '#141414', maxWidth: '280px', textWrap: 'balance' }, 'A fluid scale, snapped\u00a0to\u00a04.')]],
+           ['Don’t leave one word or character alone on a line.', '#FFFFFF', [B({ fontSize: '28px', lineHeight: '36px', letterSpacing: '-.03em', color: '#141414', maxWidth: '280px' }, 'A fluid scale, snapped to', [K({ display: 'block' }, '4.')])]])
+      ],
+      weight: [
+        P2(['Regular 400 headline with a Medium 500 accent.', '#FFFFFF', [B({ fontSize: '32px', lineHeight: '40px', letterSpacing: '-.03em', color: '#141414', maxWidth: '280px' }, 'Building spaces, ', [K({ color: '#8A6A2A', fontWeight: 500 }, 'growing value.')])]],
+           ['Don’t bold whole headlines; 700+ is not in the system.', '#FFFFFF', [B({ fontSize: '32px', lineHeight: '40px', letterSpacing: '-.03em', color: '#141414', fontWeight: 700, maxWidth: '280px' }, 'Building spaces, ', [K({ color: '#8A6A2A', fontWeight: 800 }, 'growing value.')])]]),
+        P2(['Light 300 only for large numerals.', '#FFFFFF', [B({ fontSize: '64px', lineHeight: '68px', fontWeight: 300, letterSpacing: '-.04em', color: '#141414', fontVariantNumeric: 'tabular-nums' }, '1,240', [K({ fontSize: '24px', fontWeight: 400, color: '#5E4A1E', letterSpacing: '0' }, ' ha')])]],
+           ['Don’t use Light 300 for small text.', '#FFFFFF', [B({ fontSize: '12px', lineHeight: '16px', fontWeight: 300, color: '#4A4A4A', maxWidth: '240px' }, 'Light weight at small sizes thins the strokes until the text is hard to read for many visitors.')]])
+      ],
+      space: [
+        P2(['Equal padding on opposite sides (24 all round).', '#FFFFFF', [B({ background: 'rgba(230,211,163,.6)', padding: '24px', borderRadius: '24px' }, '', [K({ display: 'block', width: '160px', height: '64px', background: '#FFFFFF' })])]],
+           ['Don’t use uneven or off-scale padding.', '#FFFFFF', [B({ background: 'rgba(143,42,29,.16)', padding: '6px 34px 26px 10px', borderRadius: '24px' }, '', [K({ display: 'block', width: '160px', height: '64px', background: '#FFFFFF' })])]]),
+        P2(['One gap value between siblings (8px).', '#FFFFFF', [B({ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }, '', [K(chip, 'Hotels'), K(chip, 'Property'), K(chip, 'Land Bank')])]],
+           ['Don’t space items with ad-hoc margins.', '#FFFFFF', [B({ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }, '', [K({ ...chip, marginRight: '2px' }, 'Hotels'), K({ ...chip, marginRight: '14px' }, 'Property'), K({ ...chip, marginTop: '6px' }, 'Land Bank')])]])
+      ],
+      grid: [
+        P2(['Snap every block edge to a column line.', '#FFFFFF', [B(colsF, '', colK), B(blk('24px', '48px', '16px', '#141414', '999px')), B(blk('calc(48px + (100% - 88px) / 2)', '48px', '128px', stripe, '8px'))], { padding: '0' }],
+           ['Don’t nudge blocks off the grid.', '#FFFFFF', [B(colsF, '', colK), B(blk('38px', '48px', '16px', '#141414', '999px')), B(blk('calc(28px + (100% - 88px) / 2)', '68px', '128px', stripe, '8px'))], { padding: '0' }]),
+        P2(['Mirror margins left and right.', '#FFFFFF', ml(40, 40, '#22604A'), { padding: '0' }],
+           ['Don’t use unequal side margins.', '#FFFFFF', ml(16, 72, '#8F2A1D'), { padding: '0' }])
+      ],
+      shape: [
+        P2(['24px containers, pill-shaped actions.', '#F8F5EF', [B({ width: '200px', padding: '24px', borderRadius: '24px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', gap: '16px' }, '', [K({ display: 'block', width: '64%', height: '16px', borderRadius: '999px', background: '#141414' }), K({ display: 'block', height: '40px', borderRadius: '999px', background: '#141414' })])]],
+           ['Don’t mix radii inside one component.', '#F8F5EF', [B({ width: '200px', padding: '24px', borderRadius: '4px', background: '#FFFFFF', display: 'flex', flexDirection: 'column', gap: '16px' }, '', [K({ display: 'block', width: '64%', height: '16px', borderRadius: '0', background: '#141414' }), K({ display: 'block', height: '40px', borderRadius: '10px', background: '#141414' })])]]),
+        P2(['Soft, warm, long shadows (E2).', '#F8F5EF', [B({ width: '160px', height: '96px', borderRadius: '24px', background: '#FFFFFF', boxShadow: '0 32px 64px -32px rgba(60,48,20,.20)' })]],
+           ['Don’t use hard black or stacked shadows.', '#F8F5EF', [B({ width: '160px', height: '96px', borderRadius: '24px', background: '#FFFFFF', boxShadow: '0 4px 6px rgba(0,0,0,.6), 0 0 12px rgba(0,0,0,.4)' })]])
+      ]
+    };
+    const st = s => ({ 'Pass': ['#22604A', '#FFFFFF'], 'Fixed in v6': ['#5E4A1E', '#FFFFFF'], 'Partial': ['#EFEAE0', '#3A3A3A'] }[s]);
+    const wcag = [
+      ['1.4.6 Contrast (Enhanced)', 'AAA', 'Text 7:1; large text 4.5:1.', 'All text tokens checked above. Bronze 500 is restricted to 24px+. Body never sits on photos without a 60%+ scrim.', 'Pass'],
+      ['1.4.8 Visual Presentation', 'AAA', 'Line height ≥1.5, width ≤80 characters, no justified text.', 'Body 16/24 (1.5), Lead 20/28 (1.4) and 16/24. Paragraphs capped at 620–640px (~72ch). Left aligned.', 'Pass'],
+      ['1.4.9 Images of Text', 'AAA', 'No text baked into images except logos.', 'All headings and labels are live text. Only the logo is an image.', 'Pass'],
+      ['1.4.11 Non-text Contrast', 'AA', 'UI boundaries and icons 3:1.', 'Interactive outlines moved from 25% grey to Bronze 500 (5:1) or Ink. Hairlines are decorative.', 'Fixed in v6'],
+      ['1.4.12 Text Spacing', 'AA', 'No loss when spacing is increased.', 'No fixed heights on text containers; flex/grid with gap.', 'Pass'],
+      ['2.2.2 Pause, Stop, Hide', 'A', 'Auto-moving content can be paused.', 'Pause buttons added to the hero slideshow and awards marquee; marquee also pauses on focus.', 'Fixed in v6'],
+      ['2.2.3 No Timing', 'AAA', 'No time limits on content.', 'Slideshow is supplementary; every slide is reachable by buttons and paused motion persists.', 'Fixed in v6'],
+      ['2.3.3 Animation from Interactions', 'AAA', 'Motion can be disabled.', 'prefers-reduced-motion stops autoplay, marquee and transitions, and removes scroll smoothing.', 'Fixed in v6'],
+      ['2.4.1 Bypass Blocks', 'A', 'Skip repeated navigation.', '“Skip to content” link is the first focusable element.', 'Fixed in v6'],
+      ['2.4.9 Link Purpose (Link Only)', 'AAA', 'Link text alone describes the destination.', 'Links name their target (“2025 Sustainability Report”). Decorative arrows are aria-hidden.', 'Fixed in v6'],
+      ['2.4.10 Section Headings', 'AAA', 'Content organised with headings.', 'Each section opens with an eyebrow + h2; cards use h3.', 'Pass'],
+      ['2.4.13 Focus Appearance', 'AAA', 'Focus ring ≥2px, 3:1 contrast.', '2px Bronze 700 outline with 4px offset on light; Champagne on dark.', 'Fixed in v6'],
+      ['2.5.5 Target Size (Enhanced)', 'AAA', 'Targets at least 44×44px.', 'Nav links 48px tall, icon buttons 44px, language switch and footer links 44px min-height.', 'Fixed in v6'],
+      ['3.1.2 Language of Parts', 'AA', 'Page language matches content.', 'The html lang attribute follows the ID / EN switch.', 'Fixed in v6'],
+      ['3.1.4 Abbreviations', 'AAA', 'Expanded form available.', 'IDX, WIB and GCG carry an expanded title; copy rule expands on first use.', 'Fixed in v6'],
+      ['3.1.5 Reading Level', 'AAA', 'Lower-secondary reading level or a simpler version.', 'Tone rules keep sentences short. Financial and governance documents need plain-language summaries.', 'Partial'],
+      ['1.2.x Media alternatives', 'AAA', 'Sign language, extended audio description.', 'No video on the landing page. Apply when video is added to news.', 'Partial']
+    ].map(w => { const c = st(w[4]); return { c: w[0], l: w[1], r: w[2], m: w[3], s: w[4], badge: { justifySelf: 'start', padding: '4px 12px', borderRadius: '999px', background: c[0], color: c[1], fontSize: '12px', lineHeight: '16px', fontWeight: 600, whiteSpace: 'nowrap' } }; });
+    const wcagSum = [
+      { v: wcag.filter(w => w.s === 'Pass').length, l: 'Criteria passing as designed' },
+      { v: wcag.filter(w => w.s === 'Fixed in v6').length, l: 'Fixed while applying the system to v6' },
+      { v: wcag.filter(w => w.s === 'Partial').length, l: 'Need content work outside the design' }
+    ];
+    const lhRules = [{ k: '+4', u: 'Large type and caps: H1, H2, numerals, eyebrow, label', e: 'Size 80px, line height 84px · Size 12px, line height 16px' }, { k: '+8', u: 'Reading type: H3, H4, lead, body, link, button', e: 'Size 24px, line height 32px · Size 16px, line height 24px' }];
+    return { lhRules, vw, toc, logoSizes, misuse, colorGroups, pairs, headers, scale, weights, spaces, spaceUse, fluid, grids, radii, elev, voice, mech, copyEx, dd, vdd, wcag, wcagSum };
+  }
+}
+</script>
+</body>
+</html>
